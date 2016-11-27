@@ -51,6 +51,18 @@ plot(IntMean$Interval, IntMean$MeanSteps, type="l", xlab="Interval",
 
 ![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 
+2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
+
+```r
+IntMean[which.max(IntMean$MeanSteps),]
+```
+
+```
+##     Interval MeanSteps
+## 104      835  206.1698
+```
+
+
 ## Imputing missing values
 1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)
 
@@ -79,7 +91,7 @@ names(act2Sum)<-c("Date","SumSteps")
 hist(act2Sum$SumSteps,main="Histogram of Total Steps taken Each Day After Computing Missing Values",xlab='Total Number of Steps taken Each Day')
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
 
 ```r
 mean(act2Sum$SumSteps)
@@ -124,4 +136,4 @@ plot(IntMeanWday$Interval, IntMeanWday$MeanSteps, type="l", xlab="Interval",
      ylab="Number of Steps",main = 'weekday' )
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
